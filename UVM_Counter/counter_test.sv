@@ -1,12 +1,14 @@
 
 
-
 class counter_test extends uvm_test;
 	`uvm_component_utils(counter_test)//add to factory
 
-//constructor
+
 	
 	counter_env env;// env handle 
+
+	
+//constructor
 	function new(string name , uvm_component parent);
 		super.new(name,parent);
 	endfunction:new
@@ -23,15 +25,15 @@ class counter_test extends uvm_test;
 //run phase
 	
 	task run_phase(uvm_phase phase);
-		counter_sequencer seqr;
+		counter_sequencer seq;
 		
-		phase.raise_objection(.obj(this));//raise obj to now that the run task start (sync.)
-		seqr=counter_sequence::type_id::create(.name("seq"));//seq is dynamic no parent
-		assert(seqr.randomize());
+		phase.raise_objection(this);//raise obj to know that the run task start(start generation stimulus) (sync.) "like event in oop"
 
-		seqr.start(env.agent.seqr);//start seq with seqr
+		seq=counter_sequence::type_id::create(.name("seq"));//seq is dynamic no parent
+		assert(seq.randomize());
+		seq.start(env.agent.seqr);//start seq with seqr
 
-		phase.drop_objection(.obj(this));
+		phase.drop_objection(this);//drop obj to know that the run task end
 	endtask:run_phase
 
 
