@@ -22,12 +22,12 @@ class counter_agent extends uvm_agent;
 		super.build_phase(phase);
 		
 
-	agent_port= new(.name("agent_port"),.parent(this));//create agent_port()
+		agent_port= new(.name("agent_port"),.parent(this));//create agent_port()
 	
 
-	seqr=counter_sequencer::type_id::create(.name("seqr"),.parent(this));
-	monitor=counter_sequencer::type_id::create(.name("monitor"),.parent(this)) ;
-	driver=counter_driver::type_id::create(.name("driver"),.parent(this));
+		seqr=counter_sequencer::type_id::create(.name("seqr"),.parent(this));
+		monitor=counter_sequencer::type_id::create(.name("monitor"),.parent(this)) ;
+		driver=counter_driver::type_id::create(.name("driver"),.parent(this));
 
 	endfunction:build_phase
 
