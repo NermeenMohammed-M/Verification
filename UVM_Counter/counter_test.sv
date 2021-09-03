@@ -25,15 +25,15 @@ class counter_test extends uvm_test;
 //run phase
 	
 	task run_phase(uvm_phase phase);
-		counter_sequencer seq;
+		counter_sequence seq;
 		
-		phase.raise_objection(this);//raise obj to know that the run task start(start generation stimulus) (sync.) "like event in oop"
+		phase.raise_objection(.obj(this));//raise obj to know that the run task start(start generation stimulus) (sync.) "like event in oop"
 
 		seq=counter_sequence::type_id::create(.name("seq"));//seq is dynamic no parent
 		assert(seq.randomize());
 		seq.start(env.agent.seqr);//start seq with seqr
 
-		phase.drop_objection(this);//drop obj to know that the run task end
+		phase.drop_objection(.obj(this));//drop obj to know that the run task end
 	endtask:run_phase
 
 

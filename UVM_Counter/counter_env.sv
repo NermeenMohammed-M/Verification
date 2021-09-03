@@ -17,8 +17,8 @@ class counter_env extends uvm_component;
 		super.build_phase(phase);
 
 		//var=class_name::type_id::create(var_name,this)
-		agent=counter_agent::type_id::create(.name(agent),.parent(this));
-		sb=counter_scoreboard::type_id::create(.name(sb),.parent(this));
+		agent=counter_agent::type_id::create(.name("agent"),.parent(this));
+		sb=counter_scoreboard::type_id::create(.name("sb"),.parent(this));
 	endfunction:build_phase
 
 //connect phase

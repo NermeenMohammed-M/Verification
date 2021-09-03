@@ -3,7 +3,7 @@
 class counter_scoreboard extends uvm_scoreboard;
 	`uvm_component_utils(counter_scoreboard)
 
-	uvm_analysis_export #(counter_sequence) sb_export;//export from the port(agent)
+	uvm_analysis_export #(counter_transaction) sb_export;//export from the port(agent)
 	//uvm_analysis_export#(counter_sequence) monitor_port; //export from the port(monitor)
 
 	
