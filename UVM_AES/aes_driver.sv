@@ -13,7 +13,7 @@ class aes_driver extends uvm_driver;
 
 	function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
-		if (! uvm_config_db #(virtual aes_if)::get(null,"*","vif",vif))
+		if (! uvm_config_db #(virtual aes_if)::get(this,"*","vif",vif))
 			`uvm_fatal("GET INTERFACE","failed to get interface");
 	endfunction:build_phase
 
@@ -53,7 +53,8 @@ class aes_driver extends uvm_driver;
 			end
 		
 			
-			
+			
+
 		end
 
 	endtask:set_sequence
