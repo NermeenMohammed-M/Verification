@@ -1,16 +1,20 @@
 class counter_transaction extends uvm_sequence_item ;
 
 
-`uvm_object_utils(counter_transaction)
-bit t_clk_in;
-rand bit t_rst_in;
-rand bit t_en_ctrl_in;
-rand bit t_set_ctrl_in;
-rand bit t_up_ctrl_in;
-rand bit[7:0] t_counter_in;
 
-bit[7:0]t_counter_out;
-bit t_ovf_out;
+	//bit t_clk_in;
+	//bit t_rst_in;
+	//rand bit t_en_ctrl_in;
+	rand bit t_set_ctrl_in;
+	rand bit t_up_ctrl_in;
+	rand bit[7:0] t_counter_in;
+	
+	bit[7:0]t_counter_out;
+	bit t_ovf_out;
+
+
+
+	`uvm_object_utils(counter_transaction)
 
 //constructor
 
@@ -18,10 +22,12 @@ bit t_ovf_out;
 		super.new(name);
 	endfunction:new
 
-	
+/*
+`uvm_object_utils_begin(counter_transaction)
+	`uvm_field_int()
+`uvm_object_utils_end
 
-
-
+*/
 endclass:counter_transaction
 
 
@@ -40,7 +46,7 @@ class counter_sequence extends uvm_sequence#(counter_transaction);
 	task body();
 		counter_transaction trn;
 		
-		repeat(10) 
+		//repeat(10) 
 		begin
 		trn =counter_transaction::type_id::create(.name("trn"));
 

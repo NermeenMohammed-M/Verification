@@ -1,12 +1,19 @@
 `include "counter_vif.sv"
+
+
+
 import counter_pkg::*;
+//`include "counter_pkg.sv"
+
 //`include "counter.v"
+
+
 import uvm_pkg::*;
 `include "uvm_macros.svh" 
 
 
 module counter_top;
-	
+//`include "counter_pkg.sv"
 	
 
 	//Interface declaration

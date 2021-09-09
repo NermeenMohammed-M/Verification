@@ -31,6 +31,7 @@ class counter_test extends uvm_test;
 
 		seq=counter_sequence::type_id::create(.name("seq"));//seq is dynamic no parent
 		assert(seq.randomize());
+		seq.print();
 		seq.start(env.agent.seqr);//start seq with seqr
 
 		phase.drop_objection(.obj(this));//drop obj to know that the run task end
