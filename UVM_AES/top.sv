@@ -4,7 +4,7 @@ import uvm_pkg::*;
 
 
 import aes_pkg::*;
-import pkg::*;
+import pkg_main::*;
 `include "aes_if.sv"
 
 
