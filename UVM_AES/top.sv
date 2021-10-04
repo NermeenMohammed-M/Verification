@@ -33,7 +33,7 @@ module top;
 		);
 
 	initial begin
-		uvm_config_db #(virtual aes_if)::set(null,"*","aes_if",vif);
+		uvm_config_db #(virtual aes_if)::set(null,"*","vif",vif);
 		run_test();//start the test
 		end
 
