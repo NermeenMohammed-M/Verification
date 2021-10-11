@@ -14,7 +14,7 @@ int cnt;//counter
 
 always @(posedge clk,negedge rst) begin
     
-        if(!nrst)//reset mode -ve edge
+        if(!rst)//reset mode -ve edge
           begin
             current_state <= start; 
             cnt=0;
