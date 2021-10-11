@@ -1,7 +1,7 @@
 module systolic_ctrl
    #(parameter dim=32) 
-(input clk,rst
- output ctrl
+   (input clk,rst;
+ output ctrl;
 );
 
 //states
